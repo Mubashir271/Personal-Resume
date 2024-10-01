@@ -1,75 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel = "stylesheet" href="style.css">
-
-
+    <link rel="stylesheet" href="style.css">
     <title>Mubashir Mughal Portfolio</title>
 </head>
+
 <body>
-<div class="container">
-    <nav>
-<div class="logo"> Mubashir Mughal </div>
-<ul class="navitems">
-<nav>
-<li><a href="#">Home</a></li>
-<li><a href="https://smdigimarketing.com/" target="_blank">About us</a></li>
-<li><a href="https://smdigimarketing.com/what-we-do/" target="_blank">Services</a></li>
-<li><a href="#">Blog</a></li>
-</nav>
-</ul>
-<div class="links">
-<a href="https://www.linkedin.com/in/mubashir-mughal-322033306/" target="_blank"><i class="fab fa-lg fa-linkedin"></i></a>
-<a href="https://www.facebook.com/mubashirmughal333" target="_blank"><i class="fab fa-lg fa-facebook"></i></a>
-<a href="https://www.instagram.com/ssup.mubashir_/" target="_blank"><i class="fab fa-lg fa-instagram"></i></a>
-  </nav>
-    
-   <div class="wrapper">
-        <div class="cols cols0">
-        <span class="topline"> Hello</span>
-        <h1>I am a <span class="multiText"></span></h1>
-        <p><strong> | React Native Developer | Android App Developer | Project Manager | Social Media Marketer | React Native Developer |
-            Business Analyst | WordPress Developer | </strong> </p>
-        <!-------------------------------->
-             <div class="btns">
-            <a href="Mubashir CV.pdf" download>
-                <button id="Download" > Download cv </button>
-              </a>
-         <!-------------------------------->
+    <div class="container">
+        <nav>
+            <div class="logo"> Mubashir Mughal </div>
+            <ul class="navitems">
+                <li><a href="#" id="contactLink">Contact</a></li>
+            </ul>
+            <div class="links">
+                <a href="https://github.com/Mubashir271" target="_blank"><i class="fab fa-lg fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mubashir-mughal-322033306/" target="_blank"><i
+                        class="fab fa-lg fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/mubashirmughal333" target="_blank"><i
+                        class="fab fa-lg fa-facebook"></i></a>
+                <a href="https://www.instagram.com/ssup.mubashir_/" target="_blank"><i class="fab fa-lg fa-instagram"></i></a>
+            </div>
+        </nav>
 
-         <button onclick="window.open('mailto:jmubashir278@gmail.com', '_blank')">
-            Hire now
-          </button>
-          
-          
+        <div class="wrapper">
+            <div class="cols cols0">
+                <span class="topline"> Hello</span>
+                <h1>I am a <span class="multiText"></span></h1>
+                <p><strong> | React Native Developer | Android App Developer | Project Manager | Social Media Marketer |
+                        Business Analyst | WordPress Developer | </strong> </p>
 
+                <div class="btns">
+                    <a href="Mubashir CV.pdf" download>
+                        <button id="Download"> Download CV </button>
+                    </a>
+                    <button onclick="window.open('mailto:jmubashir278@gmail.com', '_blank')">Hire now</button>
+                </div>
+            </div>
+
+            <div class="cols cols1">
+                <div class="imgbox">
+                    <img src="splash.png" alt="" id="splash">
+                    <img src="mub2cutout.png" alt="Mubashir Image">
+                </div>
+            </div>
         </div>
-        </div>
-<div class="cols cols1 ">
-    <div class="imgbox">
-<img src="splash.png" alt="" id="splash">
-<img src="mub2cutout.png">
     </div>
 
+    <!-- Modal Structure -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Me</h2>
+            <p>Email: jmubashir278@gmail.com</p>
+            <p>Phone: +92-3145711490</p>
+        </div>
+    </div>
 
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        // Typing Effect
+        var typingEffect = new Typed(".multiText", {
+            strings: ['coder', 'developer', 'student'],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 1500
+        });
 
-</div>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
+        // Modal Logic
+        const modal = document.getElementById("contactModal");
+        const contactLink = document.getElementById("contactLink");
+        const closeModal = document.getElementsByClassName("close")[0];
 
-var typingEffect = new Typed(" .multiText",{
-strings : ['coder', 'developer', ' student '],
-loop : true,
-typeSpeed : 100,
-backSpeed : 80,
-backDelay : 1500
-})
+        // Open Modal
+        contactLink.onclick = function () {
+            modal.style.display = "block";
+        }
 
-</script>
+        // Close Modal
+        closeModal.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Close Modal when clicking outside of it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
+
 </html>
