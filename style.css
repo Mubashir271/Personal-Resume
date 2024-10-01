@@ -2,7 +2,7 @@
 
 * {
     margin: 0;
-    padding: 0;
+    padding: 0; /* Set padding to 0 instead of auto */
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -29,7 +29,7 @@ nav {
 
 .logo {
     display: flex;
-    font-size: 4vw; /* Responsive font size */
+    font-size: 40px;
     font-weight: 800;
     color: blueviolet;
     letter-spacing: 3px;
@@ -43,11 +43,11 @@ nav {
 
 .navitems li {
     list-style: none;
-    margin: 0 2vw; /* Margin using percentage */
+    margin: 0 15px;
 }
 
 .navitems li a {
-    font-size: 2.5vw; /* Responsive font size */
+    font-size: 25px;
     color: blueviolet;
     letter-spacing: 3px;
     text-decoration: none;
@@ -58,10 +58,15 @@ nav {
     color: crimson;
 }
 
+.links:hover a {
+    color: blueviolet;
+}
+
 .links a {
-    font-size: 3vw; /* Responsive font size */
-    margin: 2vw; /* Margin using percentage */
+    font-size: 30px;
+    margin: 25px 10px;
     color: #000;
+    text-decoration: underline; /* Add underline for better visibility */
 }
 
 .wrapper {
@@ -70,19 +75,20 @@ nav {
     height: calc(100vh - 80px);
     justify-content: center;
     align-items: center;
-    padding: 0 5%; /* Padding using percentage */
+    padding: 0 10%;
     overflow: hidden;
+    position: relative; /* Set position relative to parent */
 }
 
 .wrapper::before {
     position: absolute;
     content: '';
-    height: 60vw; /* Responsive size */
-    width: 60vw; /* Responsive size */
+    height: 600px;
+    width: 600px;
     border-radius: 50%;
     left: -12%;
     top: 40%;
-    background: linear-gradient(45deg, #7f00ff, pink);
+    background: linear-gradient(45deg, #7f00ff, #ff69b4); /* Corrected color syntax */
     animation: steps() 6s linear infinite;
 }
 
@@ -98,9 +104,12 @@ nav {
 .topline {
     display: block;
     position: relative;
-    font-size: 3vw; /* Responsive font size */
+    font-size: 35px;
     letter-spacing: 5px;
     color: #3d535f;
+    padding-top: 20px; /* Add padding to the top */
+    margin-top: 20px;  /* Optional: Add margin to further ensure visibility */
+    z-index: 5;        /* Ensure it's above other elements */
 }
 
 .topline::after {
@@ -114,7 +123,7 @@ nav {
 
 h1 {
     display: block;
-    font-size: 7vw; /* Responsive font size */
+    font-size: 7em;
     font-weight: 700;
     color: black;
 }
@@ -127,7 +136,7 @@ h1 {
 p {
     display: flex;
     width: 90%;
-    font-size: 2vw; /* Responsive font size */
+    font-size: 1.2em;
     color: #3d535f;
     z-index: 5;
 }
@@ -135,19 +144,19 @@ p {
 .btns {
     width: 100%;
     position: relative;
-    left: 10%; /* Centering */
+    left: 150px;
 }
 
 button {
     outline: none;
     border: none;
     cursor: pointer;
-    font-size: 2.5vw; /* Responsive font size */
+    font-size: 25px;
     font-weight: 400;
     color: #fff;
     background-color: #3d535f;
-    padding: 2% 4%; /* Padding using percentage */
-    margin: 5%; /* Margin using percentage */
+    padding: 8px 14px;
+    margin: 40px 5px;
     letter-spacing: 2px;
     text-transform: capitalize;
     box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
@@ -160,14 +169,14 @@ button:hover {
 .imgbox {
     position: relative;
     width: 100%;
-    height: auto; /* Ensure the height adjusts automatically */
+    height: 100%;
 }
 
 .imgbox img {
     position: relative;
     height: auto;
     width: calc(130% - 80px);
-    top: -100px;
+    top: -60px; /* Adjusted for better positioning */
     right: 50px;
     animation: animateUser 4s linear infinite;
 }
@@ -175,15 +184,15 @@ button:hover {
 @keyframes animateUser {
     50% {
         right: 30px;
-        top: -90px;
+        top: -50px; /* Adjusted for better positioning */
     }
 }
 
 .imgbox #splash {
     position: absolute;
-    top: 50%;
+    top: 60%; /* Adjusted to move splash down */
     left: 50%;
-    transform: translate(-40%, -50%) rotate(-35deg);
+    transform: translate(-50%, -50%) rotate(-35deg);
     width: 160%;
     filter: saturate(200%);
     animation: animate 4s linear infinite;
@@ -245,59 +254,4 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .logo {
-        font-size: 6vw; /* Responsive font size */
-    }
-
-    .navitems li a {
-        font-size: 4vw; /* Responsive font size */
-    }
-
-    h1 {
-        font-size: 6vw; /* Responsive font size */
-    }
-
-    p {
-        font-size: 1.5vw; /* Responsive font size */
-    }
-
-    button {
-        font-size: 3vw; /* Responsive font size */
-    }
-
-    .btns {
-        left: 0; /* Center button */
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 8vw; /* Responsive font size */
-    }
-
-    .navitems li a {
-        font-size: 5vw; /* Responsive font size */
-    }
-
-    h1 {
-        font-size: 5vw; /* Responsive font size */
-    }
-
-    p {
-        font-size: 1.2vw; /* Responsive font size */
-    }
-
-    button {
-        font-size: 4vw; /* Responsive font size */
-    }
-
-    .imgbox img {
-        width: 100%; /* Full width */
-        top: 0; /* Reset position */
-        right: 0; /* Reset position */
-    }
 }
