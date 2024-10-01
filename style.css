@@ -6,7 +6,8 @@ box-sizing: border-box;
 font-family: 'Courier New', Courier, monospace;
 }
 body{
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .container
@@ -33,7 +34,7 @@ nav{
         display: flex;
         font-size: 40px;
         font-weight: 800;
-        color: blue;
+        color: blueviolet;
         letter-spacing: 3px;
 cursor: pointer;
 text-transform: uppercase;
@@ -54,7 +55,7 @@ display: flex;
 {
 
 font-size: 25px;
-color: blue;
+color: blueviolet;
 letter-spacing: 3px;
 text-decoration: none;
 text-transform: uppercase;
@@ -67,7 +68,7 @@ color: crimson;
 }
 .links:hover a{
 
-    color: crimson;
+    color: blueviolet;
 }
 
 .links a{
@@ -119,7 +120,7 @@ width: 60%;
     position: absolute;
     content: '';
     height: 4px;
-    width: 45px;
+    width: 40px;
     bottom: 10px;
     background-color: blueviolet;
 }
@@ -134,7 +135,7 @@ color: black;
 }
 .multiText{
 
-color: crimson;
+color: blueviolet;
 text-transform: uppercase;
 
 }
@@ -165,7 +166,7 @@ p{
         box-shadow: 0 15px 10px rgba(0,0,0,0.4);
         }
         button:hover{
-background-color: crimson;
+background-color: blueviolet;
 
         }
 .imgbox{
