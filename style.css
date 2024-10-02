@@ -2,7 +2,7 @@
 
 * {
     margin: 0;
-    padding: 0; /* Set padding to 0 instead of auto */
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -28,7 +28,6 @@ nav {
 }
 
 .logo {
-    display: flex;
     font-size: 40px;
     font-weight: 800;
     color: blueviolet;
@@ -58,26 +57,16 @@ nav {
     color: crimson;
 }
 
-.links:hover a {
-    color: blueviolet;
-}
-
-.links a {
-    font-size: 30px;
-    margin: 25px 10px;
-    color: #000;
-    text-decoration: underline; /* Add underline for better visibility */
-}
-
 .wrapper {
     display: flex;
+    flex-direction: row;
     width: 100%;
     height: calc(100vh - 80px);
     justify-content: center;
     align-items: center;
     padding: 0 10%;
     overflow: hidden;
-    position: relative; /* Set position relative to parent */
+    position: relative;
 }
 
 .wrapper::before {
@@ -88,7 +77,7 @@ nav {
     border-radius: 50%;
     left: -12%;
     top: 40%;
-    background: linear-gradient(45deg, #7f00ff, #ff69b4); /* Corrected color syntax */
+    background: linear-gradient(45deg, #7f00ff, #ff69b4);
     animation: steps() 6s linear infinite;
 }
 
@@ -102,27 +91,22 @@ nav {
 }
 
 .topline {
-    display: block;
-    position: relative;
     font-size: 35px;
     letter-spacing: 5px;
     color: #3d535f;
-    padding-top: 20px; /* Add padding to the top */
-    margin-top: 20px;  /* Optional: Add margin to further ensure visibility */
-    z-index: 5;        /* Ensure it's above other elements */
+    padding-top: 20px;
+    margin-top: 20px;
+    z-index: 5;
 }
 
 .topline::after {
-    position: absolute;
     content: '';
     height: 4px;
     width: 40px;
-    bottom: 10px;
     background-color: blueviolet;
 }
 
 h1 {
-    display: block;
     font-size: 7em;
     font-weight: 700;
     color: black;
@@ -134,15 +118,12 @@ h1 {
 }
 
 p {
-    display: flex;
-    width: 90%;
     font-size: 1.2em;
     color: #3d535f;
     z-index: 5;
 }
 
 .btns {
-    width: 100%;
     position: relative;
     left: 150px;
 }
@@ -176,21 +157,14 @@ button:hover {
     position: relative;
     height: auto;
     width: calc(130% - 80px);
-    top: -60px; /* Adjusted for better positioning */
+    top: -60px;
     right: 50px;
     animation: animateUser 4s linear infinite;
 }
 
-@keyframes animateUser {
-    50% {
-        right: 30px;
-        top: -50px; /* Adjusted for better positioning */
-    }
-}
-
 .imgbox #splash {
     position: absolute;
-    top: 60%; /* Adjusted to move splash down */
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-35deg);
     width: 160%;
@@ -208,16 +182,14 @@ button:hover {
 
 /* Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.4);
     padding-top: 60px;
 }
 
@@ -233,13 +205,10 @@ button:hover {
 
 .modal-content h2 {
     color: white;
-    padding: 8px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .modal-content p {
     color: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .close {
@@ -254,4 +223,86 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .navitems li a {
+        font-size: 18px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    h1 {
+        font-size: 3.5em;
+    }
+
+    .topline {
+        font-size: 24px;
+    }
+
+    .imgbox img {
+        width: calc(100% - 40px);
+        top: -20px;
+        right: 10px;
+    }
+
+    .btns {
+        left: 0;
+        text-align: center;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navitems li a {
+        font-size: 16px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .topline {
+        font-size: 18px;
+    }
+
+    .imgbox img {
+        width: 100%;
+        top: 0;
+        right: 0;
+    }
+
+    .btns {
+        left: 0;
+        text-align: center;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
 }
