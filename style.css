@@ -2,17 +2,25 @@
 
 * {
     margin: 0;
+<<<<<<< HEAD
     padding: 0; /* Set padding to 0 instead of auto */
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
+=======
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+>>>>>>> b143bc0d93719ce393d85957c8a4c0dafb48b180
 }
 
 body {
     overflow-y: auto;
     overflow-x: hidden;
+    background-color: ivory;
 }
 
 .container {
+<<<<<<< HEAD
     width: 100%;
     min-height: 100vh;
     background-color: ivory;
@@ -39,17 +47,52 @@ nav {
 
 .navitems {
     display: flex;
+=======
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Ensure nav stays at top on all screens */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    position: sticky; /* Keeps nav fixed at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+    color: blueviolet;
+    text-transform: uppercase;
+}
+
+.navitems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Keeps the links in a row */
+>>>>>>> b143bc0d93719ce393d85957c8a4c0dafb48b180
 }
 
 .navitems li {
     list-style: none;
-    margin: 0 15px;
+    margin-left: 15px;
 }
 
 .navitems li a {
+<<<<<<< HEAD
     font-size: 25px;
     color: blueviolet;
     letter-spacing: 3px;
+=======
+    font-size: 16px;
+    color: blueviolet;
+>>>>>>> b143bc0d93719ce393d85957c8a4c0dafb48b180
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -58,6 +101,7 @@ nav {
     color: crimson;
 }
 
+<<<<<<< HEAD
 .links:hover a {
     color: blueviolet;
 }
@@ -204,20 +248,100 @@ button:hover {
         left: 51%;
         width: 155%;
     }
+=======
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.links a {
+    margin-left: 15px;
+    color: blueviolet;
+}
+
+/* Main content styling */
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.cols {
+    width: 45%; /* Ensure text is on the left half */
+}
+
+.topline {
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #3d535f;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: black;
+    margin: 20px 0;
+}
+
+.multiText {
+    color: blueviolet;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1em;
+    color: #3d535f;
+    margin: 20px 0;
+}
+
+.btns {
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3d535f;
+    padding: 10px 20px;
+    margin: 10px;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: blueviolet;
+}
+
+/* Align image perfectly on the right */
+.imgbox {
+    width: 45%; /* Keeps the image aligned on the right half */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imgbox img {
+    max-width: 100%;
+}
+
+#splash {
+    display: none;
+>>>>>>> b143bc0d93719ce393d85957c8a4c0dafb48b180
 }
 
 /* Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 100; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 100;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, 0.4);
     padding-top: 60px;
 }
 
@@ -226,20 +350,19 @@ button:hover {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 90%;
     max-width: 500px;
     border-radius: 10px;
 }
 
 .modal-content h2 {
     color: white;
-    padding: 8px;
-    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 .modal-content p {
     color: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 .close {
@@ -247,11 +370,107 @@ button:hover {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
     color: black;
-    text-decoration: none;
-    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .navitems li a {
+        font-size: 14px;
+    }
+
+    .wrapper {
+        padding: 10px;
+        flex-direction: column-reverse;
+    }
+
+    .cols {
+        width: 100%;
+        text-align: center; /* Ensures text is centered */
+        margin-bottom: 20px;
+    }
+
+    .imgbox {
+        width: 100%;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2em;
+        text-align: left; /* Makes sure 'I am a multiText' stays on the left */
+    }
+
+    p {
+        font-size: 0.9em;
+        text-align: left; /* Ensure paragraph text stays left aligned */
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .navitems li a {
+        font-size: 12px;
+    }
+
+    .wrapper {
+        padding: 10px;
+    }
+
+    .cols {
+        width: 100%;
+        text-align: left; /* Ensures text is left-aligned on smaller mobile */
+    }
+
+    .imgbox {
+        width: 100%;
+        justify-content: flex-end; /* Align image on the right side */
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .imgbox img {
+        max-width: 200px; /* Ensure image doesn't overflow on mobile */
+    }
+
+    .btns {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        margin-bottom: 10px;
+    }
 }
