@@ -4,51 +4,54 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     overflow-y: auto;
     overflow-x: hidden;
+    background-color: ivory;
 }
 
 .container {
     width: 100%;
     min-height: 100vh;
-    background-color: ivory;
 }
 
+/* Ensure nav stays at top on all screens */
 nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    position: sticky; /* Keeps nav fixed at the top */
+    top: 0;
     width: 100%;
-    justify-content: space-around;
-    line-height: 80px;
-    height: 80px;
-    z-index: 111;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 800;
     color: blueviolet;
-    letter-spacing: 3px;
-    cursor: pointer;
     text-transform: uppercase;
 }
 
 .navitems {
     display: flex;
+    align-items: center;
+    justify-content: space-between; /* Keeps the links in a row */
 }
 
 .navitems li {
     list-style: none;
-    margin: 0 15px;
+    margin-left: 15px;
 }
 
 .navitems li a {
-    font-size: 25px;
+    font-size: 16px;
     color: blueviolet;
-    letter-spacing: 3px;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -57,59 +60,39 @@ nav {
     color: crimson;
 }
 
-.wrapper {
+.links {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: calc(100vh - 80px);
-    justify-content: center;
     align-items: center;
-    padding: 0 10%;
-    overflow: hidden;
-    position: relative;
 }
 
-.wrapper::before {
-    position: absolute;
-    content: '';
-    height: 600px;
-    width: 600px;
-    border-radius: 50%;
-    left: -12%;
-    top: 40%;
-    background: linear-gradient(45deg, #7f00ff, #ff69b4);
-    animation: steps() 6s linear infinite;
+.links a {
+    margin-left: 15px;
+    color: blueviolet;
+}
+
+/* Main content styling */
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
 .cols {
-    width: 50%;
-}
-
-.cols0 {
-    z-index: 5;
-    width: 60%;
+    width: 45%; /* Ensure text is on the left half */
 }
 
 .topline {
-    font-size: 35px;
-    letter-spacing: 5px;
+    font-size: 24px;
+    letter-spacing: 2px;
     color: #3d535f;
-    padding-top: 20px;
-    margin-top: 20px;
-    z-index: 5;
-}
-
-.topline::after {
-    content: '';
-    height: 4px;
-    width: 40px;
-    background-color: blueviolet;
 }
 
 h1 {
-    font-size: 7em;
+    font-size: 2.5em;
     font-weight: 700;
     color: black;
+    margin: 20px 0;
 }
 
 .multiText {
@@ -118,66 +101,45 @@ h1 {
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #3d535f;
-    z-index: 5;
+    margin: 20px 0;
 }
 
 .btns {
-    position: relative;
-    left: 150px;
+    margin-top: 20px;
 }
 
 button {
-    outline: none;
     border: none;
     cursor: pointer;
-    font-size: 25px;
-    font-weight: 400;
+    font-size: 16px;
     color: #fff;
     background-color: #3d535f;
-    padding: 8px 14px;
-    margin: 40px 5px;
-    letter-spacing: 2px;
-    text-transform: capitalize;
-    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    margin: 10px;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: blueviolet;
 }
 
+/* Align image perfectly on the right */
 .imgbox {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    width: 45%; /* Keeps the image aligned on the right half */
+    display: flex;
+    justify-content: flex-end;
 }
 
 .imgbox img {
-    position: relative;
-    height: auto;
-    width: calc(130% - 80px);
-    top: -60px;
-    right: 50px;
-    animation: animateUser 4s linear infinite;
+    max-width: 100%;
 }
 
-.imgbox #splash {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-35deg);
-    width: 160%;
-    filter: saturate(200%);
-    animation: animate 4s linear infinite;
-}
-
-@keyframes animate {
-    50% {
-        top: 49%;
-        left: 51%;
-        width: 155%;
-    }
+#splash {
+    display: none;
 }
 
 /* Modal Styles */
@@ -198,17 +160,19 @@ button:hover {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 90%;
     max-width: 500px;
     border-radius: 10px;
 }
 
 .modal-content h2 {
     color: white;
+    text-align: center;
 }
 
 .modal-content p {
     color: whitesmoke;
+    text-align: center;
 }
 
 .close {
@@ -216,93 +180,107 @@ button:hover {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
     color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
 
-/* Responsive Design for Mobile */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .navitems li a {
-        font-size: 18px;
-    }
-
-    .logo {
-        font-size: 30px;
-    }
-
-    .wrapper {
-        flex-direction: column;
-        padding: 0 5%;
-    }
-
-    h1 {
-        font-size: 3.5em;
-    }
-
-    .topline {
-        font-size: 24px;
-    }
-
-    .imgbox img {
-        width: calc(100% - 40px);
-        top: -20px;
-        right: 10px;
-    }
-
-    .btns {
-        left: 0;
-        text-align: center;
-    }
-
-    button {
-        font-size: 20px;
+    nav {
+        flex-direction: row;
         padding: 10px;
     }
 
-    .modal-content {
-        width: 90%;
+    .logo {
+        font-size: 24px;
+    }
+
+    .navitems li a {
+        font-size: 14px;
+    }
+
+    .wrapper {
+        padding: 10px;
+        flex-direction: column-reverse;
+    }
+
+    .cols {
+        width: 100%;
+        text-align: center; /* Ensures text is centered */
+        margin-bottom: 20px;
+    }
+
+    .imgbox {
+        width: 100%;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2em;
+        text-align: left; /* Makes sure 'I am a multiText' stays on the left */
+    }
+
+    p {
+        font-size: 0.9em;
+        text-align: left; /* Ensure paragraph text stays left aligned */
+    }
+
+    button {
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
-    .navitems li a {
-        font-size: 16px;
+    .logo {
+        font-size: 20px;
     }
 
-    .logo {
-        font-size: 24px;
+    .navitems li a {
+        font-size: 12px;
+    }
+
+    .wrapper {
+        padding: 10px;
+    }
+
+    .cols {
+        width: 100%;
+        text-align: left; /* Ensures text is left-aligned on smaller mobile */
+    }
+
+    .imgbox {
+        width: 100%;
+        justify-content: flex-end; /* Align image on the right side */
     }
 
     h1 {
-        font-size: 2.5em;
+        font-size: 1.5em;
     }
 
-    .topline {
-        font-size: 18px;
-    }
-
-    .imgbox img {
-        width: 100%;
-        top: 0;
-        right: 0;
-    }
-
-    .btns {
-        left: 0;
-        text-align: center;
+    p {
+        font-size: 0.8em;
     }
 
     button {
-        font-size: 18px;
-        padding: 8px;
+        font-size: 12px;
+        padding: 8px 16px;
     }
 
-    .modal-content {
-        width: 95%;
+    .imgbox img {
+        max-width: 200px; /* Ensure image doesn't overflow on mobile */
+    }
+
+    .btns {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        margin-bottom: 10px;
     }
 }
