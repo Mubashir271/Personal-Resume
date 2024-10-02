@@ -1,94 +1,86 @@
-@import url(' https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
-*{
-margin: 0;
-padding: auto;
-box-sizing: border-box;
-font-family: 'Courier New', Courier, monospace;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0; /* Set padding to 0 instead of auto */
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
 }
-body{
+
+body {
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-.container
-{
-width: 100%;
-min-height: 100vh;
-background-color: ivory;
-
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: ivory;
 }
-nav{
 
+nav {
     display: flex;
     width: 100%;
     justify-content: space-around;
     line-height: 80px;
     height: 80px;
     z-index: 111;
-   /* background-color:lightgreen; */
-
-
-}
-.logo
-{
-        display: flex;
-        font-size: 40px;
-        font-weight: 800;
-        color: blueviolet;
-        letter-spacing: 3px;
-cursor: pointer;
-text-transform: uppercase;
-}
-.navitems
-{
-display: flex;
-
 }
 
-.navitems li{
+.logo {
+    display: flex;
+    font-size: 40px;
+    font-weight: 800;
+    color: blueviolet;
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
 
+.navitems {
+    display: flex;
+}
+
+.navitems li {
     list-style: none;
     margin: 0 15px;
 }
 
-.navitems li a 
-{
-
-font-size: 25px;
-color: blueviolet;
-letter-spacing: 3px;
-text-decoration: none;
-text-transform: uppercase;
+.navitems li a {
+    font-size: 25px;
+    color: blueviolet;
+    letter-spacing: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
-.navitems li:hover a 
-{
 
-color: crimson;
-
+.navitems li:hover a {
+    color: crimson;
 }
-.links:hover a{
 
+.links:hover a {
     color: blueviolet;
 }
 
-.links a{
-font-size: 30px;
-margin: 25px 10px;
-color: #000;
+.links a {
+    font-size: 30px;
+    margin: 25px 10px;
+    color: #000;
+    text-decoration: underline; /* Add underline for better visibility */
 }
-.wrapper{
 
+.wrapper {
     display: flex;
     width: 100%;
-height: calc(100vh- 80px);
-
-justify-content: center;
-align-items: center;
-padding: 0 10%;
-overflow: hidden;
+    height: calc(100vh - 80px);
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+    overflow: hidden;
+    position: relative; /* Set position relative to parent */
 }
 
-.wrapper::before{
+.wrapper::before {
     position: absolute;
     content: '';
     height: 600px;
@@ -96,27 +88,31 @@ overflow: hidden;
     border-radius: 50%;
     left: -12%;
     top: 40%;
-    background: linear-gradient(45deg, #7f00ff, Ipink);
+    background: linear-gradient(45deg, #7f00ff, #ff69b4); /* Corrected color syntax */
     animation: steps() 6s linear infinite;
-    }
-
-.cols{
-    width: 50%;
-    }
-
-.cols0
-{
-z-index: 5;
-width: 60%;
 }
-    .topline{
+
+.cols {
+    width: 50%;
+}
+
+.cols0 {
+    z-index: 5;
+    width: 60%;
+}
+
+.topline {
     display: block;
     position: relative;
     font-size: 35px;
     letter-spacing: 5px;
     color: #3d535f;
-    }
-    .topline::after{
+    padding-top: 20px; /* Add padding to the top */
+    margin-top: 20px;  /* Optional: Add margin to further ensure visibility */
+    z-index: 5;        /* Ensure it's above other elements */
+}
+
+.topline::after {
     position: absolute;
     content: '';
     height: 4px;
@@ -125,82 +121,85 @@ width: 60%;
     background-color: blueviolet;
 }
 
-h1
-{
-display: block;
-font-size: 7em;
-font-weight: 700;
-color: black;
-
+h1 {
+    display: block;
+    font-size: 7em;
+    font-weight: 700;
+    color: black;
 }
-.multiText{
 
-color: blueviolet;
-text-transform: uppercase;
-
+.multiText {
+    color: blueviolet;
+    text-transform: uppercase;
 }
-p{
+
+p {
     display: flex;
     width: 90%;
     font-size: 1.2em;
     color: #3d535f;
     z-index: 5;
-    }
-    .btns{
-        width: 100%;
-        position: relative;
-        left: 150px;
-        }
-        button{
-        outline: none;
-        border: none;
-        cursor: pointer;
-        font-size: 25px;
-        font-weight: 400;
-        color: #fff;
-        background-color: #3d535f;
-        padding: 8px 14px;
-        margin: 40px 5px;
-        letter-spacing: 2px;
-        text-transform: capitalize;
-        box-shadow: 0 15px 10px rgba(0,0,0,0.4);
-        }
-        button:hover{
-background-color: blueviolet;
-
-        }
-.imgbox{
-    position: relative;
-width: 100%;
-height: 100%;
-
 }
-.imgbox img{
+
+.btns {
+    width: 100%;
+    position: relative;
+    left: 150px;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: 400;
+    color: #fff;
+    background-color: #3d535f;
+    padding: 8px 14px;
+    margin: 40px 5px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+    background-color: blueviolet;
+}
+
+.imgbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.imgbox img {
     position: relative;
     height: auto;
     width: calc(130% - 80px);
-    top: -100px;
+    top: -60px; /* Adjusted for better positioning */
     right: 50px;
-   /*transform: rotateY(180deg); */
     animation: animateUser 4s linear infinite;
 }
-@keyframes animateUser{
-    50%{
-    right: 30px;
-    top: -90px;
+
+@keyframes animateUser {
+    50% {
+        right: 30px;
+        top: -50px; /* Adjusted for better positioning */
     }
-    }
-    .imgbox #splash{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-40%, -50%) rotate(-35deg);
-        width: 160%;
-        filter: saturate(200%);
-        animation: animate 4s linear infinite;
-        }
-        @keyframes animate{
-        50%{
+}
+
+.imgbox #splash {
+    position: absolute;
+    top: 60%; /* Adjusted to move splash down */
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    width: 160%;
+    filter: saturate(200%);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    50% {
         top: 49%;
         left: 51%;
         width: 155%;
@@ -231,12 +230,14 @@ height: 100%;
     max-width: 500px;
     border-radius: 10px;
 }
-.modal-content h2{
+
+.modal-content h2 {
     color: white;
     padding: 8px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.modal-content p{
+
+.modal-content p {
     color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
 }
